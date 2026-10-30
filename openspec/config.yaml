@@ -1,0 +1,24 @@
+schema: spec-driven
+
+# Project context (shown to AI when creating artifacts)
+# Fill in your tech stack, conventions, style guides, domain knowledge after
+# the first brainstorming session. Example:
+#   context: |
+#     Tech stack: TypeScript, React, Node.js
+#     We use conventional commits
+#     Domain: e-commerce platform
+
+# Per-artifact rules
+# Custom rules for specific artifacts.
+rules:
+  proposal:
+    - Keep proposals under 500 words
+    - Always include a "Non-goals" section
+    - State the human decision point explicitly at the end
+  design:
+    - List rejected alternatives with a one-line rationale each
+    - Keep the chosen approach to one page
+  tasks:
+    - Break tasks into chunks of max 2 hours
+    - Each task must have a verifiable completion criterion
+    - Reference exact file paths wherever possible
