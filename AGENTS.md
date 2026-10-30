@@ -1,6 +1,6 @@
 # AGENTS.md
 
-本仓库是 **my-first-project** —— 一个由 AI coding agent 驱动、Spec-Driven 的项目模板。任何 agent（Qoder / Claude Code / Codex / Cursor 等）进入仓库时，**先读这一份**。
+本仓库是 **my-first-project** —— 一个由 AI coding agent 驱动、Spec-Driven 的 **AIWorkSpace**（工作空间）：主仓库只保留 AI 协作资产（规则 / 技能 / spec 活文档），业务代码以 git submodule 形式存放在 `backend/` 与 `frontend/` 子仓库。任何 agent（Qoder / Claude Code / Codex / Cursor 等）进入仓库时，**先读这一份**。
 
 ## 三层架构
 
@@ -11,6 +11,23 @@
 | Harness | `.qoder/` | 当前 IDE 的 agent 配置（rules / skills / commands / agents），约束 agent 生命周期与行为 | Qoder 原生配置 |
 | OpenSpec | `openspec/` | Spec-driven 工作流：先对齐 spec，再写代码 | https://github.com/Fission-AI/OpenSpec |
 | Superpowers | `.qoder/skills/` | 可组合的开发技能库，自动触发，强制流程 | https://github.com/obra/superpowers |
+
+## 仓库结构（submodule）
+
+业务代码拆为两个 git submodule 子仓库，主仓库只记录 submodule 指针（commit）：
+
+| 路径 | 子仓库 | 内容 |
+|---|---|---|
+| `backend/` | git submodule（相对路径 `../backend`） | Spring Boot 3 多模块后端（parent + common + admin-app + api-app），独立构建与测试 |
+| `frontend/` | git submodule（相对路径 `../frontend`） | Vue 3 + Vite + Element Plus 前端，独立构建 |
+
+**克隆后初始化**：
+
+```bash
+git submodule update --init --recursive
+```
+
+**在子仓库提交**：进入 `backend/` 或 `frontend/` 目录后按各自仓库的 git 流程提交（子仓库有独立历史与分支）；改动子仓库后，回到主仓库提交 submodule 指针更新。
 
 ## 硬规则（不可违反）
 
