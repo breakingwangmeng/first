@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Env & secrets
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+.next/
+out/
+target/
+*.class
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test
+coverage/
+
+# Turbo
+.turbo/
