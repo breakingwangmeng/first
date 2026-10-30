@@ -18,8 +18,8 @@
 
 | 路径 | 子仓库 | 内容 |
 |---|---|---|
-| `backend/` | git submodule（相对路径 `../backend`） | Spring Boot 3 多模块后端（parent + common + admin-app + api-app），独立构建与测试 |
-| `frontend/` | git submodule（相对路径 `../frontend`） | Vue 3 + Vite + Element Plus 前端，独立构建 |
+| `backend/` | git submodule（`github.com/breakingwangmeng/first_backend`） | Spring Boot 3 多模块后端（parent + common + admin-app + api-app），独立构建与测试 |
+| `frontend/` | git submodule（`github.com/breakingwangmeng/first_frontend`） | Vue 3 + Vite + Element Plus 前端，独立构建 |
 
 **克隆后初始化**：
 
